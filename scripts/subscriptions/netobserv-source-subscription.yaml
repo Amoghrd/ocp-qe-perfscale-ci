@@ -4,7 +4,6 @@ metadata:
   name: netobserv-operator
   namespace: netobserv
 spec:
-  channel: v0.2.x
   name: netobserv-operator
   source: netobserv-main-testing
   sourceNamespace: openshift-marketplace 
