@@ -121,3 +121,19 @@
 # total working set memory by all Kafka pods
 - query: sum(container_memory_working_set_bytes{namespace="netobserv", container="", pod=~"kafka.*"})
   metricName: workingsetKafkaTotals
+
+#################
+# Pinot metrics #
+#################
+
+# total CPU usage by pinot
+- query: sum(pod:container_cpu_usage:sum{namespace="default", pod=~"pinot.*"})
+  metricName: cpuPinotTotals
+
+# total RSS by all FLP pinot
+- query: sum(container_memory_rss{namespace="default", container="", pod=~"pinot.*"})
+  metricName: rssPinotTotals
+
+# total working set memory by all pinot pods
+- query: sum(container_memory_working_set_bytes{namespace="default", container="", pod=~"pinot.*"})
+  metricName: workingsetPinotTotals
